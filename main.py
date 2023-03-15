@@ -96,9 +96,8 @@ main_thread = threading.Thread(target=start_case.filler)
 prime_thread = threading.Thread(target=start_case.find_prime)
 fac_thread = threading.Thread(target=start_case.fucktorials)
 main_thread.start()
-while True:
-    if not main_thread.is_alive():
-        break
+while main_thread.is_alive():
+    pass
 prime_thread.start()
 fac_thread.start()
 
